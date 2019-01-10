@@ -1,6 +1,7 @@
 package hashcode;
 
 import hashcode.utils.FileIO;
+import hashcode.utils.Parser;
 
 /**
  * Hello world!
@@ -17,10 +18,11 @@ public final class App {
 
             for (String file : fileList) {
                 System.out.println(file);
-                System.out.println(FileIO.read("data/"+file));
+
+                Parser p = new Parser(FileIO.read("data/"   + file));
             }
         } catch (Exception e) {
-            //TODO: handle exception
+            // TODO: handle exception
         }
     }
 }

@@ -3,6 +3,8 @@ package hashcode.utils;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -22,13 +24,17 @@ public class FileIO {
         return f.list(ff);
     }
 
-    public static String read(String path) throws FileNotFoundException {
-        File f = new File(path);
-        Scanner sc = new Scanner(f);
+    public static String[] read(String path) throws FileNotFoundException {
+        Scanner sc = new Scanner(new File(path));
+        List<String> lines = new ArrayList<String>();
+        while (sc.hasNextLine()) {
+            lines.add(sc.nextLine());
+        }
 
-        sc.useDelimiter("\\n");
+        String[] arr = lines.toArray(new String[0]);
+        sc.close();
 
-        return sc.next();
+        return arr;
     }
 
     public static void write(String path, String[] content) {
