@@ -1,5 +1,8 @@
-node_modules/
-/output/
-.DS_Store
 .idea/
-*.iml
+.settings/
+.classpath
+.project
+.vscode/
+out/
+*.~*
+*.DS_Store
