@@ -14,7 +14,7 @@ public class Main {
         Parser p = new Parser(FileIO.read("data/" + file));
 
 
-        break; // REMOVE FOR THE OTHER TESTING
+        break; // FOR DEBUGGING: REMOVE FOR THE OTHER TESTING
       }
     } catch (Exception e) {
 
