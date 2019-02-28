@@ -11,12 +11,18 @@ public class SlideShow {
     slides.addAll(Arrays.asList(slide));
   }
 
+  public void addSlides(List<Slide> slide) {
+    slides.addAll(slide);
+  }
+
   public String[] export() {
     ArrayList<String> lines = new ArrayList<>();
     lines.add(slides.size() + "");
     for (Slide slide : slides) {
-      lines.add(slide.exportStringBecausePhilippsToStringMethodIsShitty());
+      lines.add(slide.toIdString());
     }
+
+    System.out.println(lines);
 
     return (String[]) lines.toArray();
   }

@@ -2,7 +2,6 @@ package sha.bfj;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class Slide {
@@ -30,10 +29,12 @@ public class Slide {
     return tags;
   }
 
-  public String exportStringBecausePhilippsToStringMethodIsShitty() {
-    StringBuilder stupidBuilderILoveRuby = new StringBuilder();
-    Arrays.asList(images).stream().map(image -> image.id).forEach(integer -> stupidBuilderILoveRuby.append(integer + ""));
-    return stupidBuilderILoveRuby.toString();
+  public String toIdString() {
+    StringBuilder stringBuilder = new StringBuilder();
+    Arrays.asList(images).forEach(image -> {
+      if(image != null) stringBuilder.append(image.id).append(" ");
+    });
+    return stringBuilder.toString().strip();
   }
 
   @Override
