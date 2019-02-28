@@ -19,17 +19,16 @@ public class FileIO {
     return list;
   }
 
-  public static String[] read(String path) throws FileNotFoundException {
+  public static List<String> read(String path) throws FileNotFoundException {
     Scanner sc = new Scanner(new File(path));
     List<String> lines = new ArrayList<>();
     while (sc.hasNextLine()) {
-      lines.add(sc.nextLine());
+      String line = sc.nextLine();
+      lines.add(line);
     }
 
-    String[] arr = lines.toArray(new String[0]);
     sc.close();
-
-    return arr;
+    return lines;
   }
 
   public static void write(String path, String[] content) throws IOException {
