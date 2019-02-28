@@ -39,8 +39,6 @@ public class Main {
         slideShow.addSlides(new Slide(image));
       }
 
-      System.out.println(slideShow.export());
-
       FileIO.write("output/" + file, slideShow.export());
 
       break; // FOR DEBUGGING: REMOVE FOR THE OTHER TESTING

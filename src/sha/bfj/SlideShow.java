@@ -22,8 +22,6 @@ public class SlideShow {
       lines.add(slide.toIdString());
     }
 
-    System.out.println(lines);
-
-    return (String[]) lines.toArray();
+    return lines.toArray(new String[0]);
   }
 }

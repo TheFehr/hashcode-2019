@@ -34,7 +34,7 @@ public class Slide {
     Arrays.asList(images).forEach(image -> {
       if(image != null) stringBuilder.append(image.id).append(" ");
     });
-    return stringBuilder.toString().strip();
+    return stringBuilder.toString().trim();
   }
 
   @Override
