@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class FileIO {
   public static String[] list(String path) {
     File f = new File(path);
-    FilenameFilter ff = (dir, name) -> name.endsWith(".in");
+    FilenameFilter ff = (dir, name) -> name.endsWith(".txt");
 
     String[] list = f.list(ff);
     if (list != null) {
