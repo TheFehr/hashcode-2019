@@ -3,6 +3,7 @@ package sha.bfj;
 import sha.bfj.utils.FileIO;
 import sha.bfj.utils.Parser;
 
+import javax.xml.transform.Source;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -40,7 +41,9 @@ public class Main {
           slideShow.addSlides(new Slide(image));
         }
 
-        
+        System.out.println(slideShow.export());
+
+        FileIO.write("output/" + file, slideShow.export());
 
         break; // FOR DEBUGGING: REMOVE FOR THE OTHER TESTING
       }
