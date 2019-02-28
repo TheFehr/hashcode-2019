@@ -1,5 +1,6 @@
 package sha.bfj;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,5 +27,13 @@ public class Slide {
 
   public Set<String> getTags() {
     return tags;
+  }
+
+  @Override
+  public String toString() {
+    return "Slide{" +
+      "images=" + Arrays.toString(images) +
+      ", tags=" + tags +
+      '}';
   }
 }
