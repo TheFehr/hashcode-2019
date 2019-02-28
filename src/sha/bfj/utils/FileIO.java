@@ -1,8 +1,6 @@
 package sha.bfj.utils;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FilenameFilter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -34,7 +32,9 @@ public class FileIO {
     return arr;
   }
 
-  public static void write(String path, String[] content) {
-
+  public static void write(String path, String[] content) throws IOException {
+    BufferedWriter writer = new BufferedWriter(new FileWriter(path));
+    writer.write(String.join("\n", content));
+    writer.close();
   }
 }
