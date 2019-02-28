@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,7 +13,12 @@ public class FileIO {
     File f = new File(path);
     FilenameFilter ff = (dir, name) -> name.endsWith(".in");
 
-    return f.list(ff);
+    String[] list = f.list(ff);
+    if (list != null) {
+      Arrays.sort(list);
+    }
+
+    return list;
   }
 
   public static String[] read(String path) throws FileNotFoundException {
