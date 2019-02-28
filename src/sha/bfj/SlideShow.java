@@ -17,5 +17,7 @@ public class SlideShow {
     for (Slide slide : slides) {
       lines.add(slide.exportStringBecausePhilippsToStringMethodIsShitty());
     }
+
+    return lines;
   }
 }
