@@ -10,5 +10,11 @@ public class SlideShow {
     slides.add(slide);
   }
 
-
+  public String[] export() {
+    ArrayList<String> lines = new ArrayList<>();
+    lines.add(slides.size() + "");
+    for (Slide slide : slides) {
+      slide.
+    }
+  }
 }
