@@ -3,8 +3,8 @@ package sha.bfj;
 import java.util.*;
 
 public class VerticalCombinator {
-  List<Image> verticals;
-  List<Slide> slides = new ArrayList<>();
+  private List<Image> verticals;
+  private List<Slide> slides = new ArrayList<>();
 
   public VerticalCombinator(ArrayList<Image> verticals) {
     this.verticals = verticals;
@@ -25,7 +25,7 @@ public class VerticalCombinator {
   private Slide findPerfectMatch(Image searcher, ArrayList<Image> matches) {
     Slide highestYet = new Slide(searcher, matches.get(0));
 
-    for (Image image : this.verticals) {
+    for (Image image : matches) {
       Slide tmp = new Slide(searcher, image);
 
       if (tmp.tags.size() > highestYet.tags.size()) {
