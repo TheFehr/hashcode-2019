@@ -1,22 +1,18 @@
 package sha.bfj;
 
-import sha.bfj.SlidePair;
-
-import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SlidesCombinator {
-  SlideShow slideShow;
-  List<Slide> slides = new ArrayList<>();
+  SlideShow slideShow = new SlideShow();
 
   public SlidesCombinator(SlideShow slideShow) {
     List<Slide> slides = slideShow.slides;
 
-    slides.stream().sorted((slide, t1) ->
-      slide.getTags().size() - t1.getTags().size()
-    );
+    slides = slides.stream().sorted(Comparator.comparingInt(slide -> slide.getTags().size())).collect(Collectors.toList());
 
-    while(slides.size() > 0) {
+    while (slides.size() > 0) {
       Slide searcher = slides.get(0);
       SlidePair match = this.findPerfectMatch(searcher, slides);
       slides.remove(0);
@@ -38,5 +34,9 @@ public class SlidesCombinator {
     }
 
     return highestYet;
+  }
+
+  public SlideShow getSlideShow() {
+    return slideShow;
   }
 }
