@@ -1,7 +1,5 @@
 package sha.bfj;
 
-import sha.bfj.Slide;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,7 +8,13 @@ public class SlidePair {
   int middle = 0;
   int uniqueB = 0;
 
+  Slide aSlide;
+  Slide bSlide;
+
   SlidePair(Slide a, Slide b) {
+    this.aSlide = a;
+    this.bSlide = b;
+
     Set<String> aTags = a.getTags();
     Set<String> bTags = b.getTags();
     Set<String> allTags = a.getTags();
@@ -29,5 +33,13 @@ public class SlidePair {
     this.uniqueA = uniqueATags.size();
     this.uniqueB = uniqueBTags.size();
     this.middle = middleTags.size();
+  }
+
+  public Slide getASlide() {
+    return aSlide;
+  }
+
+  public Slide getBSlide() {
+    return bSlide;
   }
 }

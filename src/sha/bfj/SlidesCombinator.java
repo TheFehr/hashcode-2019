@@ -12,12 +12,17 @@ public class SlidesCombinator {
 
     slides = slides.stream().sorted(Comparator.comparingInt(slide -> slide.getTags().size())).collect(Collectors.toList());
 
-    while (slides.size() > 0) {
+    while (slides.size() > 1) {
       Slide searcher = slides.get(0);
+      slides.remove(searcher);
       SlidePair match = this.findPerfectMatch(searcher, slides);
-      slides.remove(0);
-      slides.remove(match);
-      slideShow.addSlides(searcher);
+      slides.remove(match.getBSlide());
+      this.slideShow.addSlides(match.getASlide(), match.getBSlide());
+      System.out.println(this.slideShow.slides.size() + " " + slides.size());
+    }
+
+    if (slides.size() == 1) {
+      this.slideShow.addSlides(slides.get(0));
     }
 
   }
