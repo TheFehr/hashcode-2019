@@ -15,7 +15,7 @@ public class SlideShow {
     ArrayList<String> lines = new ArrayList<>();
     lines.add(slides.size() + "");
     for (Slide slide : slides) {
-      slide.
+      lines.add(slide.exportStringBecausePhilippsToStringMethodIsShitty());
     }
   }
 }
