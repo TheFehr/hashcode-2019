@@ -40,7 +40,7 @@ public class Main {
           slideShow.addSlides(new Slide(image));
         }
 
-
+        
 
         break; // FOR DEBUGGING: REMOVE FOR THE OTHER TESTING
       }
