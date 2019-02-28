@@ -1,17 +1,12 @@
 package sha.bfj.utils;
 
+import sha.bfj.MyObject;
+
 public class Parser {
-  private String[] lines;
+  static MyObject parse(String[] lines) {
+    MyObject myObject = new MyObject();
 
-  public Parser(String[] lines) {
-    this.lines = lines;
-  }
 
-  public String[] getLines() {
-    return lines;
-  }
-
-  public void setLines(String[] lines) {
-    this.lines = lines;
+    return myObject;
   }
 }
