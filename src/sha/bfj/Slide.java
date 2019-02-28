@@ -32,7 +32,7 @@ public class Slide {
 
   public String exportStringBecausePhilippsToStringMethodIsShitty() {
     StringBuilder stupidBuilderILoveRuby = new StringBuilder();
-    Arrays.asList(images).stream().map(image -> image.id).forEach(integer -> stupidBuilderILoveRuby.append(integer + ""));
+    Arrays.asList(images).stream().map(image -> image.id).forEach(integer -> stupidBuilderILoveRuby.append(integer + " "));
     return stupidBuilderILoveRuby.toString();
   }
 
