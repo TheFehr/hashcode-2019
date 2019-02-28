@@ -1,18 +1,18 @@
 package sha.bfj;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Slide {
   Image[] images = new Image[2];
-  List<String> tags = new ArrayList<>();
+  Set<String> tags = new HashSet<>();
 
-  public Slide(Image horizontalImage ){
+  public Slide(Image horizontalImage) {
     this.images[0] = horizontalImage;
     tags.addAll(horizontalImage.getTags());
   }
 
-  public Slide(Image verticalImage1, Image verticalImage2){
+  public Slide(Image verticalImage1, Image verticalImage2) {
     this.images[0] = verticalImage1;
     this.images[1] = verticalImage2;
     this.tags.addAll(verticalImage1.getTags());
@@ -24,7 +24,7 @@ public class Slide {
     return images;
   }
 
-  public List<String> getTags() {
+  public Set<String> getTags() {
     return tags;
   }
 }
