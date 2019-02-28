@@ -3,18 +3,15 @@ package sha.bfj;
 import java.util.*;
 
 public class VerticalCombinator {
-  private List<Image> verticals;
   private List<Slide> slides = new ArrayList<>();
 
   public VerticalCombinator(ArrayList<Image> verticals) {
-    this.verticals = verticals;
-
     while(verticals.size() > 2) {
-      Image searcher = this.verticals.get(0);
+      Image searcher = verticals.get(0);
       Slide newSlide = this.findPerfectMatch(searcher, verticals);
       this.slides.add(newSlide);
-      this.verticals.remove(searcher);
-      this.verticals.remove(newSlide.getImages()[1]);
+      verticals.remove(searcher);
+      verticals.remove(newSlide.getImages()[1]);
     }
     if (verticals.size() == 2) {
       this.slides.add(new Slide(verticals.get(0), verticals.get(1)));
