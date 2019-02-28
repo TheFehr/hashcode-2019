@@ -1,4 +1,4 @@
-package test.sha.bfj;
+package sha.bfj;
 
 import org.junit.Test;
 
