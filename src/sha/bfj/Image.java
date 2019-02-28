@@ -9,7 +9,7 @@ public class Image {
   List<String> tags;
 
   public Image(int id, Orientation orientation) {
-    this.id =  id;
+    this.id = id;
     this.orientation = orientation;
     tags = new ArrayList<>();
   }
@@ -19,6 +19,10 @@ public class Image {
   }
 
 
+  public List<String> getTags() {
+    return tags;
+  }
+
   @Override
   public String toString() {
     return "Image{" +
@@ -27,5 +31,6 @@ public class Image {
       ", tags=" + tags +
       '}';
   }
+
 }
 
