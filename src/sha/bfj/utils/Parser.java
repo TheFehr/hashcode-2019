@@ -1,12 +1,12 @@
 package sha.bfj.utils;
 
-import sha.bfj.MyObject;
+import sha.bfj.Image;
 
 public class Parser {
-  static MyObject parse(String[] lines) {
-    MyObject myObject = new MyObject();
+  static Image parse(String[] lines) {
+    Image image = new Image();
 
 
-    return myObject;
+    return image;
   }
 }
