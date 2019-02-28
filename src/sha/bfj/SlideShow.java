@@ -18,6 +18,6 @@ public class SlideShow {
       lines.add(slide.exportStringBecausePhilippsToStringMethodIsShitty());
     }
 
-    return lines;
+    return (String[]) lines.toArray();
   }
 }
